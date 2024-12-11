@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# Hotel Availability Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **Hotel Availability Checker**, built with **Vite**, using **React**, **TypeScript**, and **TailwindCSS**. It allows users to check hotel room availability based on predefined hotel and booking data.
 
-Currently, two official plugins are available:
+## Features
+- Displays hotel and booking data from JSON files.
+- Allows users to check room availability for specific hotels, dates, and room types.
+- Calculates available rooms dynamically by considering overlapping bookings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **Vite**: For fast build and development.
+- **React**: For creating the user interface.
+- **TypeScript**: For type-safe JavaScript development.
+- **TailwindCSS**: For styling and responsive design.
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clone the Repository
+```bash
+git clone <https://github.com/sefaalanur/Hotel_booking_system>
+cd <Hotel_booking_system>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2. Install Dependencies
+```bash
+npm install
 ```
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+
+Open your browser and navigate to [http://localhost:5173/](http://localhost:5173/) to view the application.
+
+## Project Structure
+- **`src/components`**: Contains reusable React components.
+- **`src/utils`**: Contains utility functions like `dataLoader` for loading JSON files.
+- **`public/`**: Includes static assets like `hotels.json` and `bookings.json`.
+
+## Production Build
+To build the project for production:
+
+1. Run the build command:
+```bash
+npm run build
+```
+
+2. Serve the static files in the `dist/` folder using a static server:
+```bash
+npm install -g serve
+serve -s dist
+```
+
+3. Access the app at [http://localhost:5173](http://localhost:5173) or the specified port.
+
+## Troubleshooting
+- Ensure JSON files are correctly placed in the `public/` directory.
+- Verify that the data files follow the correct format as shown above.
